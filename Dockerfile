@@ -1,9 +1,9 @@
 FROM nginx
 
-COPY ./index.html /var/www/html
+COPY ./index.html /usr/share/nginx/html
 
 COPY ./nginx.conf /etc/nginx/nginx.conf
 
-COPY ./default.conf /etc/nginx/sites-available/
+
 
 EXPOSE 80
