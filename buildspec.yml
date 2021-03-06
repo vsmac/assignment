@@ -9,10 +9,10 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...          
-      - docker build -t test:$IMAGE_TAG .
-      - docker tag test:$IMAGE_TAG 299292937090.dkr.ecr.us-east-1.amazonaws.com/test:$IMAGE_TAG   
+      - docker build -t test:4 .
+      - docker tag test:$IMAGE_TAG 299292937090.dkr.ecr.us-east-1.amazonaws.com/test:4   
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push 299292937090.dkr.ecr.us-east-1.amazonaws.com/test:latest:$IMAGE_TAG
+      - docker push 299292937090.dkr.ecr.us-east-1.amazonaws.com/test:latest:4
