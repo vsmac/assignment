@@ -16,4 +16,7 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker image.....
       - docker push 299292937090.dkr.ecr.us-east-1.amazonaws.com/test:4   
+artifacts:
+  files:
+    - imagedefinitions.json
 
