@@ -1,6 +1,6 @@
 [
   {
-    "name": "sample-app",
+    "name": "Nginx",
     "imageUri": "299292937090.dkr.ecr.us-east-1.amazonaws.com/test:4"
   }
 ]
