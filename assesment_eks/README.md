@@ -14,3 +14,20 @@ docker push accountnumber.dkr.ecr.ap-south-1.amazonaws.com/ecr_registry:latest
 
 Now we can use same image in EKS
 
+
+# Terraform
+
+run terraform init
+
+
+terrform plan
+
+
+terraform apply
+
+kubectl apply -f redis-sts.yaml
+kubectl apply -f redis-svc.yaml
+kubectl apply -f app-deploy.yaml
+kubectl apply -f app-service.yaml
+
+
