@@ -35,13 +35,7 @@ output "name" {
   value = var.name
 }
 
-output "private_zone_id" {
-  value = var.private_zone_id
-}
 
-output "public_zone_id" {
-  value = var.public_zone_id
-}
 
 output "region" {
   value = var.region
