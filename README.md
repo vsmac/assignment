@@ -32,7 +32,7 @@ aws ecr get-login-password --region ap-south-1 | docker login --username AWS --p
 
 docker push accountnumber.dkr.ecr.ap-south-1.amazonaws.com/ecr_registry:latest
 
-Now we can use same image in EKS
+# Now we can use same image in EKS deploy app via kubectl
 
 
 kubectl apply -f app-deploy.yaml
