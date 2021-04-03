@@ -45,8 +45,5 @@ module "eks" {
   stateful_worker_min_size      = 2
   stateful_worker_max_size      = 3
 
-  public_zone_id    = data.aws_route53_zone.public_zone.id
-  public_zone_name  = data.aws_route53_zone.public_zone.name
-  private_zone_id   = data.aws_route53_zone.private_zone.id
-  private_zone_name = data.aws_route53_zone.private_zone.name
+ 
 }
