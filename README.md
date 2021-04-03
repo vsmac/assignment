@@ -1,4 +1,4 @@
-# docker compose
+# To run app locally use below commands
 
 sudo docker-compose build (build docker images)
 
@@ -7,7 +7,20 @@ sudo docker-compose up (run docker-compose locally in detach mode use (-d)
 
 # to deploy app in eks
 
-1. create docker image and push on ECR
+# create eks cluster with Terraform
+
+
+# Terraform
+
+run terraform init
+
+
+terrform plan
+
+
+terraform apply
+
+# create docker image and push on ECR
 
 docker build -t nclouds:test .
 
@@ -22,25 +35,14 @@ docker push accountnumber.dkr.ecr.ap-south-1.amazonaws.com/ecr_registry:latest
 Now we can use same image in EKS
 
 
-# Terraform
-
-run terraform init
+kubectl apply -f app-deploy.yaml
 
 
-terrform plan
-
-
-terraform apply
+kubectl apply -f app-service.yaml
 
 kubectl apply -f redis-sts.yaml
 
 
 kubectl apply -f redis-svc.yaml
-
-
-kubectl apply -f app-deploy.yaml
-
-
-kubectl apply -f app-service.yaml
 
 
