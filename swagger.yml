@@ -1,0 +1,85 @@
+---
+openapi: 3.0.0
+info:
+  description: ansible 
+  version: 1.0.0
+  title: Ansible Playbook run
+servers:
+- url: "/"
+tags:
+- name: Ping Request
+  description: Example API for requesting and return ping requests
+paths:
+  "/ping":
+    get:
+      tags:
+      - Ping Request
+      summary: Returns pingRequests
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/components/schemas/pingRequests"
+  "/ping/{id}":
+    parameters:
+    - name: id
+      in: path
+      required: true
+      description: ID of the cat that we want to match
+      type: string
+    get:
+      tags:
+      - Ping Request
+      summary: Get ping request with given ID
+      parameters:
+      - in: path
+        name: id
+        required: true
+        description: Ping Request id
+        schema:
+          "$ref": "#/components/schemas/id"
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/components/schemas/pingRequest"
+        '400':
+          description: Failed. Misunderstood Request.
+        '404':
+          description: Failed. Ping request not found.
+    
+components:
+  schemas:
+    id:
+      properties:
+        uuid:
+          type: string
+    pingRequestPostBody:
+      type: object
+      properties:
+        title:
+          type: string
+          format: string
+        email:
+          type: string
+          format: email
+    pingRequest:
+      type: object
+      properties:
+        title:
+          type: string
+          format: string
+        email:
+          type: string
+          format: email
+        timestamp:
+          type: string
+          format: number
+    pingRequests:
+      type: object
+      properties:
+        pingRequest:
+          type: object
+          additionalProperties:
+            "$ref": "#/components/schemas/pingRequest"
+
