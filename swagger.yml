@@ -10,7 +10,7 @@ tags:
 - name: Ping Request
   description: Example API for requesting and return ping requests
 paths:
-  "/ping":
+  "/qa":
     get:
       tags:
       - Ping Request
@@ -20,6 +20,16 @@ paths:
           description: OK
           schema:
             "$ref": "#/components/schemas/pingRequests"
+  "/uat":
+    get:
+      tags:
+      - Ping Request
+      summary: Returns pingRequests
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/components/schemas/pingRequests"  
   "/ping/{id}":
     parameters:
     - name: id
